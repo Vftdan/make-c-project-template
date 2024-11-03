@@ -31,7 +31,7 @@ ifneq ($(strip $(DEPS)),)
 	CPPFLAGS += $(shell $(PKGCONFIG) --cflags $(DEPS))
 	LDLIBS += $(shell $(PKGCONFIG) --libs $(DEPS))
 endif
-INCPATH += -iquote $(SRC_DIR)
+INCPATH += -iquote $(SRC_DIR) -iquote $(BUILD_DIR)/gensrc
 ENSURE_DIR = mkdir -p $(shell dirname "$@")
 COMPILE_EXE = $(CC) $(LDFLAGS) $^ $(LOADLIBES) $(LDLIBS) -o $@
 COMPILE_DLL = $(CC) -shared $(LDFLAGS) $^ $(LOADLIBES) $(LDLIBS) -o $@
