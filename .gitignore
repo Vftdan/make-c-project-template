@@ -1,0 +1,5 @@
+/build
+compile_flags.txt
+tags
+# Use your binary output:
+main
